@@ -2,32 +2,32 @@
 
 Estructura de carpetas:
 
-microservicio/
-├── app/
-│ ├── init.py
-│ ├── controllers/
-│ │ ├── init.py
-│ │ └── ...
-│ ├── models/
-│ │ ├── init.py
-│ │ └── ...
-│ ├── routes/
-│ │ ├── init.py
-│ │ └── ...
-│ └── utils/
-│ ├── init.py
-│ └── ...
-├── config/
-│ ├── init.py
-│ ├── settings.py
-│ └── ...
-├── tests/
-│ ├── init.py
-│ └── ...
-├── .env
-├── requirements.txt
-├── README.md
-└── app.py
+microservicio/  
+├── app/  
+│ ├── init.py  
+│ ├── controllers/  
+│ │ ├── init.py  
+│ │ └── ...  
+│ ├── models/  
+│ │ ├── init.py  
+│ │ └── ...  
+│ ├── routes/  
+│ │ ├── init.py  
+│ │ └── ...  
+│ └── utils/  
+│ ├── init.py  
+│ └── ...  
+├── config/  
+│ ├── init.py  
+│ ├── settings.py  
+│ └── ...  
+├── tests/  
+│ ├── init.py  
+│ └── ...  
+├── .env  
+├── requirements.txt  
+├── README.md  
+└── app.py  
 
 Aquí está la descripción de cada carpeta y archivo:
 
