@@ -1,20 +1,17 @@
 import datetime
 
 
-class StatusHistory:
-    def __init__(self, id, property_id, status_id, update_date):
-        self.id: int = id
-        self.property_id: int = property_id
-        self.status_id: int = status_id
-        self.update_date: datetime = update_date
+class StatusHistoryModel:
+    def __init__(self, data: dict) -> None:
+        self.id: int = data["id"]
+        self.property_id: int = data["property_id"]
+        self.status_id: int = data["status_id"]
+        self.update_date: datetime = data["update_date"]
 
-    def __repr__(self):
-        f"{self.status_id} {self.update_date}"
-
-    def serialize(self):
+    def serialize(self) -> dict:
         return {
             "id": self.id,
             "property_id": self.property_id,
             "status_id": self.status_id,
-            "update_date": self.update_date,
+            "update_date": str(self.update_date),
         }
