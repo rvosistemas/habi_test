@@ -12,6 +12,12 @@ router = APIRouter()
 
 @router.get("/properties")
 async def get_properties():
+    """
+    Obtiene una lista de propiedades.
+
+    Returns:
+        dict: Respuesta con la lista de propiedades recuperadas.
+    """
     try:
         property_controller = PropertyController()
         properties = property_controller.get_properties()
@@ -27,6 +33,12 @@ async def get_properties():
 
 @router.get("/status")
 async def get_status():
+    """
+    Obtiene una lista de estados.
+
+    Returns:
+        dict: Respuesta con la lista de estados recuperados.
+    """
     try:
         status_controller = StatusController()
         status_list = status_controller.get_status()
@@ -46,6 +58,12 @@ async def get_status():
 
 @router.get("/status_history")
 async def get_status_history():
+    """
+    Obtiene una lista de historiales de estado.
+
+    Returns:
+        dict: Respuesta con la lista de historiales de estado recuperados.
+    """
     try:
         status_history_controller = StatusHistoryController()
         status_histories = status_history_controller.get_status_history()
@@ -65,6 +83,15 @@ async def get_status_history():
 
 @router.post("/search")
 async def search_data(filters: dict = Body(example=example_search_request_filters)):
+    """
+    Realiza una búsqueda de datos con los filtros especificados.
+
+    Args:
+        filters (dict): Filtros de búsqueda.
+
+    Returns:
+        dict: Respuesta con los datos de búsqueda recuperados.
+    """
     try:
         search_controller = SearchController()
 

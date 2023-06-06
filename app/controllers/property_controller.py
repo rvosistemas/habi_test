@@ -6,6 +6,12 @@ from ..config.settings import settings
 class PropertyController:
     @staticmethod
     def get_properties() -> list:
+        """
+        Obtiene una lista de propiedades (property) desde la base de datos.
+
+        Returns:
+            list: Una lista de propiedades (property) serializadas.
+        """
         db_connection = Database(settings=settings.serialize())
         db_connection.connect()
         cursor = db_connection.connection.cursor()

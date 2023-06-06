@@ -6,6 +6,12 @@ from ..config.settings import settings
 class StatusController:
     @staticmethod
     def get_status() -> list:
+        """
+        Obtiene una lista de status (status) de la propiedades (property)  desde la base de datos.
+
+        Returns:
+            list: Una lista de status (status) serializadas.
+        """
         db_connection = Database(settings=settings.serialize())
         db_connection.connect()
         cursor = db_connection.connection.cursor()

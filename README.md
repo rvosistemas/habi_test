@@ -1,10 +1,12 @@
-# Prueba tecnica HABI sobre un Microservicio REST
-
+# Prueba técnica sobre un Microservicio REST
 Estructura de carpetas:
 
 microservicio/  
 ├── app/  
 │ ├── init.py  
+│ ├── config/  
+│ │ ├── init.py    
+│ │ └── ...  
 │ ├── controllers/  
 │ │ ├── init.py  
 │ │ └── ...  
@@ -17,10 +19,6 @@ microservicio/
 │ └── utils/  
 │ ├── init.py  
 │ └── ...  
-├── config/  
-│ ├── init.py  
-│ ├── settings.py  
-│ └── ...  
 ├── tests/  
 │ ├── init.py  
 │ └── ...  
@@ -28,8 +26,8 @@ microservicio/
 ├── requirements.txt  
 ├── README.md  
 └── app.py  
-
-Aquí está la descripción de cada carpeta y archivo:
+└── Makefile.py  
+└── LICENSE.txt  
 
 - La carpeta `app/` contiene la lógica principal de la aplicación:
   - `controllers/` contiene los controladores que manejan la lógica de negocio de cada ruta del microservicio.
@@ -37,18 +35,49 @@ Aquí está la descripción de cada carpeta y archivo:
   - `routes/` contiene los archivos que definen las rutas del microservicio y asocian las funciones de controlador correspondientes.
   - `utils/` contiene módulos de utilidades compartidas utilizados en la aplicación.
 
-- La carpeta `config/` contiene la configuración de la aplicación:
-  - `settings.py` contiene la configuración general de la aplicación, como variables de entorno y ajustes específicos.
-
 - La carpeta `tests/` contiene los archivos de pruebas para realizar pruebas unitarias y de integración en el microservicio.
 
-- El archivo `.env` (opcional) contiene variables de entorno específicas de la aplicación.
-
-- El archivo `requirements.txt` enumera todas las dependencias del proyecto.
-
-- El archivo `README.md` es un archivo de documentación que describe el microservicio y proporciona instrucciones para ejecutarlo y utilizarlo.
-
-- El archivo `app.py` es el punto de entrada principal de la aplicación que inicializa el servidor y las configuraciones.
+- El archivo `.env` contiene variables de entorno específicas de la aplicación.
 
 ## Desarrollo
-En el siguiente microservicio no se usaran frameworks, con la estructura de carpetas anteriormente expuesta.
+En el siguiente microservicio se usara fastapi, con la estructura de carpetas anteriormente expuesta.
+
+## Ejecución
+Para ejecutar la aplicación, sigue los siguientes pasos:
+
+Se debe tener instalado python el sistemas y crear un entorno virtual con: `python -m venv .venv`
+
+y luego activa dicho entorno: `pip install -r requirements.txt`
+
+Instala las dependencias del proyecto ejecutando el siguiente comando en **linux**: ` source /venv/bin/activate`
+
+Instala las dependencias del proyecto ejecutando el siguiente comando en **windows**: `source .venv/Scripts/activate`
+
+Configura las variables de entorno en el archivo .env.
+
+Ejecuta el siguiente comando para iniciar la aplicación:
+`python app.py` 
+
+## Pruebas unitarias
+Ejecuta el siguiente comando para iniciar los test, esto esta configurado en el archivo **Makefile**:
+
+si es un sistema operativo **linux**:
+`make linux-coverage-app` 
+
+si es un sistema operativo **windows**:
+`make windows-coverage-app`
+
+## Pruebas de aplicación
+En la dirección **localhost:8000/docs** se encuentra la documentación de la api, en la cual se puede probar los endpoints, usando openapi.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+## Likes
+Para agregar un sistema de likes, se debe crear una tabla en la base de datos, los detalles están el archivo **Diagram.drawio**.
+
+## Segundo ejercicio
+Para el segundo ejercicio, se debe ejecutar el archivo **segundo_ejercicio.py** con el siguiente comando:
+`python segundo_ejercicio.py` 
+
+Aparecerá una pequeña interfaz para ingresar los arreglos y comprobar los resultados.
