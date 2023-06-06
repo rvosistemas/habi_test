@@ -1,11 +1,11 @@
 from fastapi import HTTPException, Depends, APIRouter, Body
 
-from app.controllers.property_controller import PropertyController
-from app.controllers.status_controller import StatusController
-from app.controllers.status_history_controller import StatusHistoryController
-from app.controllers.search_controller import SearchController
+from ..controllers.property_controller import PropertyController
+from ..controllers.status_controller import StatusController
+from ..controllers.status_history_controller import StatusHistoryController
+from ..controllers.search_controller import SearchController
 
-from app.utils.SearchRequest_example import example_search_request_filters
+from ..utils.SearchRequest_example import example_search_request_filters
 
 router = APIRouter()
 
