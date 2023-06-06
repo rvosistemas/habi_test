@@ -1,11 +1,8 @@
-class Status:
-    def __init__(self, id, name, label) -> None:
-        self.id: int = id
-        self.name: str = name
-        self.label: str = label
-
-    def __repr__(self) -> str:
-        return f"<Status {self.name}>"
+class StatusModel:
+    def __init__(self, data: dict) -> None:
+        self.id: int = data["id"]
+        self.name: str = data["name"]
+        self.label: str = data["label"]
 
     def serialize(self) -> dict:
         return {"id": self.id, "name": self.name, "label": self.label}
