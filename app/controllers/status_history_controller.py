@@ -6,6 +6,12 @@ from ..config.settings import settings
 class StatusHistoryController:
     @staticmethod
     def get_status_history() -> list:
+        """
+        Obtiene una lista de historial de status (status_history) de la propiedades (property) y el status (status)  desde la base de datos.
+
+        Returns:
+            list: Una lista de historial de status (status_history) serializadas.
+        """
         db_connection = Database(settings=settings.serialize())
         db_connection.connect()
         cursor = db_connection.connection.cursor()

@@ -5,6 +5,12 @@ load_dotenv()
 
 
 class Settings:
+    """
+    Inicializa una instancia de la clase Settings.
+
+    Lee los valores de configuración desde las variables de entorno y los asigna a los atributos de la clase.
+    """
+
     def __init__(self) -> None:
         # Database
         self.DB_HOST = os.getenv("DB_HOST")
@@ -18,6 +24,12 @@ class Settings:
         self.APP_PORT = os.getenv("APP_PORT")
 
     def serialize(self) -> dict:
+        """
+        Devuelve un diccionario con la configuración serializada.
+
+        Returns:
+            dict: Un diccionario que contiene todos los valores de configuración de la instancia.
+        """
         return {
             "DB_HOST": self.DB_HOST,
             "DB_PORT": self.DB_PORT,
